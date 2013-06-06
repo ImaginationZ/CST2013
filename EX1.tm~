@@ -185,6 +185,7 @@
 <\initial>
   <\collection>
     <associate|info-flag|minimal>
+    <associate|sfactor|4>
   </collection>
 </initial>
 
