@@ -1,4 +1,4 @@
-<TeXmacs|1.0.7.15>
+<TeXmacs|1.0.7.18>
 
 <style|generic>
 
@@ -6,178 +6,123 @@
   <doc-data|<doc-title|Assignment for>|<\doc-subtitle>
     Computer Science Theory for the Information Age
 
-    Day 1
+    Day 2
   </doc-subtitle>|<doc-author|<author-data|<author-name|Zen
   Huang>|<\author-affiliation>
     5120309027
 
     2012 ACM class<abbr|<abbr|<abbr|<abbr|<abbr|<abbr|<abbr|<abbr|<strong|<abbr|<strong|<abbr|<strong|>>>>>>>>>>>>>
   </author-affiliation>>>|<\doc-date>
-    <date>
+    <date|>
   </doc-date>>
 
   <\exercise>
-    Project the surface area of a sphere of radius <math|<sqrt|d>> in
-    d-dimensions onto a line through the center. For d equal 2 and 3, derive
-    an explicit formula for how the projected surface area changes as we move
-    along the line. For large d, argue (intuitively) that the projected
-    surface area should behave like a Gaussian.
+    How does the volume of a sphere of radius two behave as the dimension of
+    the space increases? What if the radius was large than two but a constant
+    independent of <em|><math|d>? What function of <math|d> would the radius
+    need to be for a sphere of radius <math|r> to have approximately constant
+    volume as<space|0.2spc> the dimension increases?
   </exercise>
 
   <\answer>
     \;
 
     <\indent>
-      Suppose we pick the line with <math|<around*|(| x<rsub|2> = x<rsub|3> =
-      \<ldots\>=x<rsub|d> = 0 |)>>, calculate the derivate surface area
-      parallel to this line, so that we have
-    </indent>
-
-    <\equation>
-      d S<rsub|p><around*|(|x<rsub|1>|)> =
-      A<rsub|d-1><around*|(|<sqrt|d-x<rsub|1><rsup|2>>|)>*d x<rsub|1>
-    </equation>
-
-    <\jump-in>
-      <\verse>
-        where <math|A<rsub|d><around*|(|r|)>> is the surface area of a
-        d-dimensional sphere.
-      </verse>
-    </jump-in>
-
-    <\indent>
-      Notice that the integral of this notion is not equal to the surface
-      area of the sphere.
-    </indent>
-
-    <\indent>
-      In particular, the case of 2-dimensional sphere
-    </indent>
-
-    <\equation>
-      d S<rsub|p><around*|(|x<rsub|1>|)> = 2*d x<rsub|1>
-    </equation>
-
-    <\indent>
-      the case of 3-dimensional sphere
-    </indent>
-
-    <\equation>
-      d S<rsub|p><around*|(|x<rsub|1>|)> = 2*\<pi\><sqrt|d-x<rsup|2>>*d
-      x<rsub|1>
-    </equation>
-
-    <\indent>
-      And for the cases of high-dimensional situations,
-      <right-aligned|>take<\footnote>
+      take<\footnote>
         <em|Computer Science Theory for the Information Age>, p10, Lemma 2.1
       </footnote>
 
       <\equation>
-        A<rsub|d ><around*|(|r|)> = <frac|2*\<pi\><rsup|<frac|d|2>>|\<Gamma\><around*|(|<frac|d|2>|)>>*r<rsup|d-1>
+        V<rsub|><around*|(|r,d|)> = <frac|2|d>*<frac|\<pi\><rsup|<frac|d|2>>|\<Gamma\><around*|(|<frac|d|2>|)>>*r<rsup|d>
       </equation>
 
-      we have
+      for the sphere of radius 2, we have\ 
 
       <\equation>
-        <frac|d S<rsub|p><around*|(|x<rsub|1>|)>|d x<rsub|1>>=
-        <frac|2*\<pi\><rsup|<frac|d|2>-1>|\<Gamma\><around*|(|<frac|d|2>-1|)>>*<around*|(|d-x<rsup|2><rsub|1>|)><rsup|<frac|d|2>-1>
+        V<rsub|><around*|(|2,d|)> = <frac|2<rsup|>|d>*<frac|2<rsup|d>*\<pi\><rsup|<frac|\<mathd\>|2>>|\<Gamma\><around*|(|<frac|d|2>|)>>
       </equation>
 
-      consider the Stirling's formula for the gamma function<\footnote>
-        <em|Wikipedia>, <em|Stirling's approximation>,
-        en.wikipedia.org/wiki/Stirling%27s_approximation
-      </footnote>
+      see into the radio of
 
       <\equation>
-        \<Gamma\><around*|(|x|)> = <sqrt|<frac|2*\<pi\>|x>>*<around*|(|<frac|x|e>|)><rsup|x>
+        <frac|V<around*|(|2,d|)>|V<around*|(|2,d-2|)>> =
+        <frac|4*\<pi\>|<frac|d|2>-1>
       </equation>
 
-      we have
+      we can conclude that
+
+      <\proposition*>
+        The volume of sphere of radius 2 draws bigger, than smaller, and
+        finally goes to
+
+        infinitesimal as the dimension of the space increases.\ 
+      </proposition*>
+    </indent>
+
+    <\indent>
+      When the radius <math|r\<neq\> 2> but remains constant indepent from
+      <math|d>, see into the radio
 
       <\equation>
-        <frac|d S<rsub|p><around*|(|x<rsub|1>|)>|d x<rsub|1>> =
-        <frac|2*\<pi\><rsup|<frac|d|2>-1>|
-        <sqrt|<frac|4*\<pi\>|d-2>>*<around*|(|<frac|d-2|2e>|)><rsup|<frac|d|2>-1>>*<around*|(|d-x<rsup|2><rsub|1>|)><rsup|<frac|d|2>-1>
-        = *<frac|<around*|(|2*\<pi\>*e|)><rsup|<frac|d|2>-1>|<sqrt|\<pi\>>>*<around*|(|<frac|d-x<rsup|2><rsub|1>|d-2>|)><rsup|<frac|d|2>-1
-        >
+        <frac|V<around*|(|r,d|)>|V<around*|(|r,d-2|)>> =
+        <frac|r<rsup|2>*\<pi\>|<frac|d|2>-1>
       </equation>
 
-      take <math|d \<rightarrow\> +\<infty\>>, we have
+      the conclusion goes exactly the same
 
-      <\equation>
-        <frac|d S<rsub|p><around*|(|x<rsub|1>|)>|d x<rsub|1>> =
-        \ *<frac|<around*|(|2*\<pi\>*e|)><rsup|<frac|d|2>-1>|<sqrt|\<pi\>>>*e<rsup|1-<frac|x<rsub|1><rsup|2>|2>>
-      </equation>
+      <\proposition*>
+        The volume of sphere of constant radius draws bigger, than smaller,
+        and finally goes to infinitesimal as the dimension of the space
+        increases.\ 
+      </proposition*>
+    </indent>
 
-      Note that this notion contains factor
-      <math|e<rsup|-<frac|x<rsup|2>|2>>>, which is liner related with the
-      Guassian.
-
-      \;
+    <\indent>
+      <\note*>
+        To be more serious and accurate, there may be
+        <math|<around*|(|r,d|)>> with <math|<around*|(|V<around*|(|r,d-1|)>\<less\>V<around*|(|r,d|)>
+        \<cap\> V<around*|(|r,d|)> \<gtr\> V<around*|(|r,d+1|)>|)>> for
+        <math|V<around*|(|r,d|)>> is not continuous since
+        <math|\<Gamma\><around*|(|<frac|d|2>|)>> is not the same for odd and
+        even <math|d>, howerver the number of such <math|<around*|(|r,d|)>>
+        is countable and rather small.
+      </note*>
     </indent>
   </answer>
 
   <\exercise>
-    For what value of d is the volume, <math|V<around*|(|d|)>>, of a
-    d-dimonsional unit sphere maximum?\ 
+    Consider the upper hemisphere of a unit-radius sphere in
+    <math|d>-dimensions. What is the height of the maximum volume cylinder
+    that can be placed entirely inside the hemisphere? As you increase the
+    height of the cylinder, you need to reduce the cylinder's radius so that
+    it will lie entirely within the hemisphere.
   </exercise>
 
   <\answer>
     \;
 
     <\indent>
-      Take<\footnote>
-        <em|Computer Science Theory for the Information Age>, p10, Lemme 2.1
-      </footnote>
-    </indent>
-
-    <\equation>
-      V<around*|(|d|)> = <frac|2|d>*<frac|\<pi\><rsup|<frac|d|2>>|\<Gamma\><around*|(|<frac|d|2>|)>>
-    </equation>
-
-    <\verse>
-      where gamma function
+      Denote <math|h> as the height of the cylinder, then the volume of the
+      cylinder is
 
       <\equation>
-        \<Gamma\><around*|(|x|)> = <around*|(|x-1|)>*\<Gamma\><around*|(|x-1|)>
+        V<around*|(|h|)> = h*<around*|(|1-h<rsup|2>|)><rsup|<frac|d-1|2>>*V<around*|(|d-1|)>
+        = V<around*|(|d-1|)>*<sqrt|h<rsup|2>*<around*|(|1-h<rsup|2>|)><rsup|d-1>>
       </equation>
-    </verse>
 
-    <\indent>
-      Consider the ratio
+      and when <math|>
 
       <\equation>
-        r<around*|(|d|)> = <frac|V<around*|(|d|)>|V<around*|(|d-2|)>> =
-        <frac|<frac|2|d>*<frac|\<pi\><rsup|<frac|d|2>>|\<Gamma\><around*|(|<frac|d|2>|)>>|<frac|2|d-2>*<frac|\<pi\><rsup|<frac|d|2>-1>|\<Gamma\><around*|(|<frac|d|2>-1|)>>>
-        = <frac|2*\<pi\>|d>*
+        h<rsup|2 > = <frac|1-h<rsup|2>|d-1>
       </equation>
 
-      for <math|d \<geqslant\> 7>, <math|r<around*|(|d|)> \<less\> 1>, so the
-      maximum of volume must be with <math|d = 6> or <math|d = 5>.
+      that is\ 
 
       <\equation>
-        V<around*|(|6|)> = <frac|2*\<pi\>|6>*V<around*|(|4|)> =
-        <frac|\<pi\><rsup|2>|6>*V<around*|(|2|)> = <frac|\<pi\><rsup|3>|6>
+        h = <frac|1|<sqrt|d>>
       </equation>
 
-      <\equation>
-        V<around*|(|5|)> = <frac|2*\<pi\>|5>*V<around*|(|3|)> =
-        <frac|8*\<pi\><rsup|2>|15>
-      </equation>
-
-      Notice that
-
-      <\equation>
-        V<around*|(|6|)> \<less\> V<around*|(|5|)>
-      </equation>
-
-      So the maximum volume of all d-dimensional unit sphere is
-
-      <\equation>
-        V<rsub|m> = V<around*|(|5|)> = <frac|8*\<pi\><rsup|2>|15> \<approx\>
-        5.26379
-      </equation>
+      the volume <math|V<around*|(|h|)>> gets its maximum.
     </indent>
   </answer>
 </body>
@@ -185,6 +130,7 @@
 <\initial>
   <\collection>
     <associate|info-flag|minimal>
+    <associate|sfactor|4>
   </collection>
 </initial>
 
