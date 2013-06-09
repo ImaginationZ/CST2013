@@ -124,11 +124,20 @@
       P<around*|(|l\<geqslant\><frac|1|d*<sqrt|d>>|)>\<leqslant\><frac|1|\<Omicron\><around*|(|d|)>>
     </equation>
 
-    and that shows <strong|As the dimension <math|d> goes higher, the
+    and that shows <strong|As the dimension <math|d> gets higher, the
     randomly generated points are more likely to appear near the equator
-    within distance of <math|<frac|1|d*<sqrt|d>>>>, which leads to the answer
+    within a distance going to Infinitesimal>, which leads to the answer
     proved.
   </indent>
+
+  <\exercise>
+    Generate 20 points uniformly at random on a 1,000-dimensional sphere of
+    radius 100. Caculate the distance between each pair of points. Then
+    project the data onto subspheres of dimension <math|k =
+    100,50,20,5,4,3,2,1> and caculate the sum of squared error between
+    <math|<frac|k|d>> times the original distances and the new pair wise
+    distances for each of the above values of <math|k>.
+  </exercise>
 </body>
 
 <\initial>
