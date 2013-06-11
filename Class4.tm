@@ -93,10 +93,10 @@
     \<noplus\>+<around*|(|p<rsub|0>p<rsub|1>+p<rsub|1>p<rsub|0>|)>*x+<around*|(|p<rsub|0>p<rsub|2>+p<rsub|1>p<rsub|1>+p<rsub|2>p<rsub|0>|)>*x<rsup|2>+\<ldots\>>
     obviously.
 
+    Let <math|z<rsub|j>> be number of children in jth generation.
+
+    \;
+
     \;
   </proposition>
-
-  \;
-
-  \;
 </body>

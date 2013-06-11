@@ -126,7 +126,7 @@
 
     and that shows <strong|As the dimension <math|d> gets higher, the
     randomly generated points are more likely to appear near the equator
-    within a distance going to Infinitesimal>, which leads to the answer
+    within a distance going to infinitesimal>, which leads to the answer
     proved.
   </indent>
 
@@ -135,8 +135,8 @@
     radius 100. Caculate the distance between each pair of points. Then
     project the data onto subspheres of dimension <math|k =
     100,50,20,5,4,3,2,1> and caculate the sum of squared error between
-    <math|<frac|k|d>> times the original distances and the new pair wise
-    distances for each of the above values of <math|k>.
+    <math|<frac|<sqrt|k>|<sqrt|d>>> times the original distances and the new
+    pair wise distances for each of the above values of <math|k>.
   </exercise>
 </body>
 
