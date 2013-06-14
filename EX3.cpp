@@ -57,6 +57,7 @@ double get_distance( double* x, double* y, int d ){
 }
 
 void anylize_distance( double** p ,int d, int n, int &num, double &exp, double &var ){
+    file << "This is a "<<d<<" demensional space"<<endl;
     num = 0;
     exp = 0;
     var = 0;
@@ -73,7 +74,7 @@ void anylize_distance( double** p ,int d, int n, int &num, double &exp, double &
     exp /= num;
     sort(dis, dis+num);
     for(int i = 0; i < num; ++i){
-        file << dis[i] << ' ';
+        file << dis[i] <<endl;
         var += pow( dis[i] - exp, 2 );
     }
     file << endl;
