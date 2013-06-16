@@ -99,8 +99,8 @@
         <tformat|<table|<row|<cell|\<sigma\><rsup|2><around*|(|X|)>>|<cell|=>|<cell|E<around*|(|X<rsup|2>|)>
         - E<rsup|2><around*|(|X|)><eq-number>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|d>*<below|<above|\<Sigma\>|d>|k=1><around*|(|<frac|1|2>E<around*|(|<around*|(|<above|<below|\<Sigma\>|i=1,i\<neq\>k>|d>x<rsub|i>|)><rsup|2>|)>*
         \<noplus\>+ <frac|1|2>*E<around*|(|<around*|(|1+<above|<below|\<Sigma\>|i=1,i\<neq\>k>|d>x<rsub|i>|)><rsup|2>|)>
-        - <frac|d<rsup|2>|4>|\<nobracket\>>>>|<row|<cell|>|<cell|=>|<cell|<around*|(|d-1|)>E<around*|(|x<rsup|2><rsub|i>|)>+2*C<rsup|2><rsub|d-1>E<rsup|2><around*|(|x<rsub|i>|)>+<around*|(|d-1|)>E<around*|(|x<rsub|i>|)>+1-<frac|d<rsup|2>|4>>>|<row|<cell|>|<cell|=>|<cell|<frac|d-1|12>
-        \<noplus\>\<noplus\>+<frac|<around*|(|d-1|)><around*|(|d-2|)>|4>+<frac|d-1|2>+1-<frac|d<rsup|2>|4>>>|<row|<cell|>|<cell|=>|<cell|\<Omicron\><around*|(|d|)>>>>>
+        - <frac|d<rsup|2>|4>|\<nobracket\>>>>|<row|<cell|>|<cell|=>|<cell|<around*|(|d-1|)>E<around*|(|x<rsup|2><rsub|i>|)>+2*C<rsup|2><rsub|d-1>E<rsup|2><around*|(|x<rsub|i>|)>+<around*|(|d-1|)>E<around*|(|x<rsub|i>|)>+1-<frac|d<rsup|2>|4>>>|<row|<cell|>|<cell|=>|<cell|<frac|d-1|3>
+        \<noplus\>\<noplus\>+<frac|<around*|(|d-1|)><around*|(|d-2|)>|4>+<frac|d-1|2>+1-<frac|d<rsup|2>|4>>>|<row|<cell|>|<cell|=>|<cell|<frac|d|12>+\<Omicron\><around*|(|1|)>>>>>
       </eqnarray*>
     </indent>
 
@@ -111,16 +111,22 @@
         P<around*|(|<around*|\||X-E<around*|(|X|)>|\|>\<geqslant\>\<epsilon\>|)>\<leqslant\><frac|\<sigma\><rsup|2><around*|(|X|)>|\<epsilon\><rsup|2>>
       </equation>
 
-      and take <math|\<epsilon\>= <frac|1|d>>, we have
+      and take <math|\<epsilon\>= d<rsup|<frac|3|4>>>, we have
 
       <\equation>
-        P<around*|(|<around*|\||X-E<around*|(|X|)>|\|>\<geqslant\><frac|1|d>|)>\<leqslant\><frac|1|\<Omicron\><around*|(|d|)>>
+        P<around*|(|<around*|\||X-E<around*|(|X|)>|\|>\<geqslant\>d<rsup|<frac|1|4>>*<sqrt|d>|)>\<leqslant\><frac|1|12*<sqrt|d>>
       </equation>
 
       also for
 
       <\equation>
-        P<around*|(|l\<geqslant\><frac|1|d*<sqrt|d>>|)>\<leqslant\><frac|1|\<Omicron\><around*|(|d|)>>
+        P<around*|(|l\<geqslant\>d<rsup|<frac|1|4>>|)>\<leqslant\><frac|1|12*<sqrt|d>>
+      </equation>
+
+      Notice that\ 
+
+      <\equation>
+        <frac|d<rsup|<frac|1|4>>|<sqrt|d>> \<rightarrow\> 0\<nocomma\>
       </equation>
 
       and that shows <strong|As the dimension <math|d> gets higher, the
