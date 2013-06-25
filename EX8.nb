@@ -1,0 +1,342 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12378,        332]
+NotebookOptionsPosition[     11960,        313]
+NotebookOutlinePosition[     12316,        329]
+CellTagsIndexPosition[     12273,        326]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Data", " ", "=", " ", 
+   RowBox[{"Import", "[", "\"\</Users/Zen/EX8.dat\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dis", " ", "=", 
+   RowBox[{"Array", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"#1", " ", ">=", " ", "#2"}], ",", 
+        RowBox[{"Data", "[", 
+         RowBox[{"[", 
+          RowBox[{"#1", ",", "#2"}], "]"}], "]"}], ",", 
+        RowBox[{"Data", "[", 
+         RowBox[{"[", 
+          RowBox[{"#2", ",", "#1"}], "]"}], "]"}]}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"20", ",", "20"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"i_", ",", "j_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "2"}], "*", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Dis", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}], "*", 
+       RowBox[{"Dis", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"1", "/", "20"}], "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Dis", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", "kj"}], "]"}], "]"}], "*", 
+          RowBox[{"Dis", "[", 
+           RowBox[{"[", 
+            RowBox[{"i", ",", "kj"}], "]"}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"kj", ",", "20"}], "}"}]}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"1", "/", "20"}], "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Dis", "[", 
+           RowBox[{"[", 
+            RowBox[{"ki", ",", "j"}], "]"}], "]"}], "*", 
+          RowBox[{"Dis", "[", 
+           RowBox[{"[", 
+            RowBox[{"ki", ",", "j"}], "]"}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"ki", ",", "20"}], "}"}]}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"1", "/", "400"}], "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Dis", "[", 
+             RowBox[{"[", 
+              RowBox[{"ki", ",", "kj"}], "]"}], "]"}], "*", 
+            RowBox[{"Dis", "[", 
+             RowBox[{"[", 
+              RowBox[{"ki", ",", "kj"}], "]"}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"ki", ",", "20"}], "}"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"kj", ",", "20"}], "}"}]}], "]"}]}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Array", "[", 
+     RowBox[{"f", ",", 
+      RowBox[{"{", 
+       RowBox[{"20", ",", "20"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ei", "=", 
+   RowBox[{"Eigenvectors", "[", "A", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"Array", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#1", " ", "\[Equal]", " ", "#2"}], " ", "&&", " ", 
+         RowBox[{"#1", " ", "\[LessEqual]", " ", "2"}]}], ",", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"Eigenvalues", "[", "A", "]"}], "[", 
+          RowBox[{"[", "#1", "]"}], "]"}], "]"}], ",", "0"}], "]"}], "&"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"20", ",", "20"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ei", "=", 
+   RowBox[{"Ei", ".", "d"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Pos", "=", 
+   RowBox[{"Array", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Ei", "[", 
+       RowBox[{"[", 
+        RowBox[{"#1", ",", "#2"}], "]"}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"20", ",", "2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"raw", "=", 
+   RowBox[{"List", "[", 
+    RowBox[{
+    "\"\<Boston\>\"", ",", "\n", "\"\<Buffalo\>\"", ",", "\n", 
+     "\"\<Chicago\>\"", ",", "\n", "\"\<Dallas\>\"", ",", "\n", 
+     "\"\<Denver\>\"", ",", "\n", "\"\<Houston\>\"", ",", "\n", 
+     "\"\<Los Angeles\>\"", ",", "\n", "\"\<Memphis\>\"", ",", "\n", 
+     "\"\<Miami\>\"", ",", "\n", "\"\<Minneapolis\>\"", ",", "\n", 
+     "\"\<New York\>\"", ",", "\n", "\"\<Omaha\>\"", ",", "\n", 
+     "\"\<Philadelphia\>\"", ",", "\n", "\"\<Phoenix\>\"", ",", "\n", 
+     "\"\<Pittsbrugh\>\"", ",", "\n", "\"\<Saint Louis\>\"", ",", "\n", 
+     "\"\<Salt Lake City\>\"", ",", "\n", "\"\<San Francisco\>\"", ",", "\n", 
+     "\"\<Seattle\>\"", ",", "\n", "\"\<Washington D.C.\>\""}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Name", "=", 
+  RowBox[{"Array", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Text", "[", 
+      RowBox[{"raw", "[", 
+       RowBox[{"[", "#1", "]"}], "]"}], "]"}], "&"}], ",", 
+    RowBox[{"{", "20", "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataPlot", "=", 
+   RowBox[{"Point", "[", "Pos", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pts", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"Sqrt", "[", "3", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+      "8", ",", "9", ",", "10", ",", "11", ",", "12", ",", "13", ",", "14", 
+      ",", "15", ",", "16", ",", "17", ",", "18", ",", "19", ",", "20"}], 
+     "}"}], ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"VertexCoordinates", "\[Rule]", "Pos"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"i", "->", 
+        RowBox[{"Name", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "20"}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"VertexSize", "\[Rule]", "Medium"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.581132338972211*^9, 3.581132349981201*^9}, {
+   3.581133698457555*^9, 3.5811337147282352`*^9}, {3.5811338052854433`*^9, 
+   3.581134016498096*^9}, {3.581134050338372*^9, 3.58113405316185*^9}, {
+   3.5811341011773148`*^9, 3.5811342910298557`*^9}, {3.5811343343861017`*^9, 
+   3.581134402775646*^9}, {3.581134481088112*^9, 3.5811345535227547`*^9}, 
+   3.581134716565071*^9, {3.5811348034228973`*^9, 3.581134806980845*^9}, {
+   3.581134961350545*^9, 3.5811349772580347`*^9}, {3.5811351222106323`*^9, 
+   3.581135137358379*^9}, {3.581135327608231*^9, 3.5811353308645372`*^9}, {
+   3.5811355051599073`*^9, 3.581135522874197*^9}, {3.581135670209031*^9, 
+   3.581135675435164*^9}, {3.581135815201035*^9, 3.581135817320363*^9}, {
+   3.581136567498378*^9, 3.581136569297386*^9}, {3.581136621983671*^9, 
+   3.581136684597227*^9}, {3.581136725299876*^9, 3.581136774793952*^9}, {
+   3.581136863955278*^9, 3.581136906867502*^9}, {3.581136947265925*^9, 
+   3.5811370012649393`*^9}, {3.5811371317478333`*^9, 3.58113716090858*^9}, {
+   3.581137417001849*^9, 3.581137474275908*^9}, {3.5811375493957853`*^9, 
+   3.5811376402816343`*^9}, {3.581137695420158*^9, 3.581137777897586*^9}, {
+   3.58113790276472*^9, 3.581137988397526*^9}, {3.5811380632521057`*^9, 
+   3.581138085696143*^9}, {3.581138131734124*^9, 3.5811381507930803`*^9}, {
+   3.581138194121951*^9, 3.5811382103935213`*^9}, {3.581138240838386*^9, 
+   3.5811382455440903`*^9}, {3.581138281738909*^9, 3.581138300919323*^9}, {
+   3.5811383665824537`*^9, 3.581138379916523*^9}, {3.581138454702167*^9, 
+   3.581138473788906*^9}, {3.581138509877328*^9, 3.581138551010437*^9}, {
+   3.5811386484727592`*^9, 3.58113876842947*^9}, {3.5811388079876337`*^9, 
+   3.58113903959097*^9}, {3.581163644368556*^9, 3.581163649015997*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Boston\"\>", ",", "\<\"Buffalo\"\>", ",", "\<\"Chicago\"\>", 
+   ",", "\<\"Dallas\"\>", ",", "\<\"Denver\"\>", ",", "\<\"Houston\"\>", 
+   ",", "\<\"Los Angeles\"\>", ",", "\<\"Memphis\"\>", ",", "\<\"Miami\"\>", 
+   ",", "\<\"Minneapolis\"\>", ",", "\<\"New York\"\>", ",", "\<\"Omaha\"\>", 
+   ",", "\<\"Philadelphia\"\>", ",", "\<\"Phoenix\"\>", 
+   ",", "\<\"Pittsbrugh\"\>", ",", "\<\"Saint Louis\"\>", 
+   ",", "\<\"Salt Lake City\"\>", ",", "\<\"San Francisco\"\>", 
+   ",", "\<\"Seattle\"\>", ",", "\<\"Washington D.C.\"\>"}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.5811389825855103`*^9, 3.581139040280614*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Boston\"\>", TextForm]], "InlineText"],
+    Text["Boston"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Buffalo\"\>", TextForm]], "InlineText"],
+    Text["Buffalo"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Chicago\"\>", TextForm]], "InlineText"],
+    Text["Chicago"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Dallas\"\>", TextForm]], "InlineText"],
+    Text["Dallas"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Denver\"\>", TextForm]], "InlineText"],
+    Text["Denver"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Houston\"\>", TextForm]], "InlineText"],
+    Text["Houston"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Los Angeles\"\>", TextForm]], "InlineText"],
+    Text["Los Angeles"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Memphis\"\>", TextForm]], "InlineText"],
+    Text["Memphis"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Miami\"\>", TextForm]], "InlineText"],
+    Text["Miami"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Minneapolis\"\>", TextForm]], "InlineText"],
+    Text["Minneapolis"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"New York\"\>", TextForm]], "InlineText"],
+    Text["New York"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Omaha\"\>", TextForm]], "InlineText"],
+    Text["Omaha"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Philadelphia\"\>", TextForm]], "InlineText"],
+    Text["Philadelphia"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Phoenix\"\>", TextForm]], "InlineText"],
+    Text["Phoenix"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Pittsbrugh\"\>", TextForm]], "InlineText"],
+    Text["Pittsbrugh"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Saint Louis\"\>", TextForm]], "InlineText"],
+    Text["Saint Louis"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Salt Lake City\"\>", TextForm]], "InlineText"],
+    Text["Salt Lake City"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"San Francisco\"\>", TextForm]], "InlineText"],
+    Text["San Francisco"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Seattle\"\>", TextForm]], "InlineText"],
+    Text["Seattle"]], ",", 
+   InterpretationBox[Cell[BoxData[
+     FormBox["\<\"Washington D.C.\"\>", TextForm]], "InlineText"],
+    Text["Washington D.C."]]}], "}"}]], "Output",
+ CellChangeTimes->{{3.5811389825855103`*^9, 3.581139040283976*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.581163639730441*^9, 3.5811636397455187`*^9}}]
+},
+WindowSize->{941, 747},
+WindowMargins->{{Automatic, 35}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 7965, 207, 675, "Input"],
+Cell[8547, 231, 666, 11, 63, "Output"],
+Cell[9216, 244, 2631, 63, 48, "Output"]
+}, Open  ]],
+Cell[11862, 310, 94, 1, 28, InheritFromParent]
+}
+]
+*)
+
+(* End of internal cache information *)
+
