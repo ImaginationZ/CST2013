@@ -77,7 +77,7 @@
     <\indent>
       The transition matrix is
 
-      <\equation*>
+      <\equation>
         P = <matrix|<tformat|<cwith|1|6|4|4|cell-background|darker
         grey>|<cwith|1|1|4|9|cell-background|darker
         grey>|<cwith|2|3|6|9|cell-background|darker
@@ -96,7 +96,7 @@
         grey>|<cwith|8|8|4|4|cell-background|darker
         grey>|<cwith|7|7|5|5|cell-background|darker
         grey>|<table|<row|<cell|<frac|1|2>>|<cell|<frac|1|4>>|<cell|<frac|1|4>>|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|0>>|<row|<cell|<frac|1|8>>|<cell|<frac|1|2>>|<cell|<frac|1|8>>|<cell|0>|<cell|<frac|1|4>>|<cell|0>|<cell|0>|<cell|0>|<cell|0>>|<row|<cell|<frac|1|4>>|<cell|<frac|1|2>>|<cell|<frac|1|4>>|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|0>>|<row|<cell|<frac|1|8>>|<cell|0>|<cell|0>|<cell|0>|<cell|<frac|1|4>>|<cell|<frac|1|8>>|<cell|0>|<cell|0>|<cell|0>>|<row|<cell|0>|<cell|<frac|1|8>>|<cell|0>|<cell|0>|<cell|<frac|1|2>>|<cell|<frac|1|8>>|<cell|0>|<cell|<frac|1|8>>|<cell|0>>|<row|<cell|0>|<cell|0>|<cell|<frac|1|8>>|<cell|0>|<cell|<frac|1|4>>|<cell|<frac|1|2>>|<cell|0>|<cell|0>|<cell|<frac|1|8>>>|<row|<cell|0>|<cell|0>|<cell|0>|<cell|<frac|1|4>>|<cell|0>|<cell|0>|<cell|0>|<cell|<frac|1|4>>|<cell|0>>|<row|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|<frac|1|4>>|<cell|0>|<cell|0>|<cell|<frac|1|2>>|<cell|<frac|1|8>>>|<row|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|0>|<cell|<frac|1|4>>|<cell|0>|<cell|<frac|1|4>>|<cell|<frac|1|2>>>>>>
-      </equation*>
+      </equation>
 
       where
 
